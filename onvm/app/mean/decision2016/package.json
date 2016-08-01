@@ -1,0 +1,19 @@
+{
+  "name": "decision2016",
+  "description": "U.S.A 2016 Election Application!",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/linnovate/mean.git"
+  },
+  "license": "Apache-2.0",
+  "main": "server.js",
+  "dependencies": {
+     "express" : "~4.5.1",
+     "mongoose" : "^4.1.12",
+     "body-parser" : "~1.4.2",
+     "bson": "~0.5.2",
+     "mongodb": "^2.0.36",
+     "method-override" : "~2.0.2"        
+  }
+}
