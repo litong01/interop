@@ -1,9 +1,0 @@
-export OS_REGION_NAME=RegionOne
-export OS_PROJECT_NAME=demo
-export OS_IDENTITY_API_VERSION=3
-export OS_PASSWORD=secret
-export OS_DOMAIN_NAME=default
-export OS_AUTH_URL=http://9.30.217.9:5000/v3
-export OS_USERNAME=demo
-export OS_TENANT_NAME=demo
-export OS_PROJECT_DOMAIN_NAME=default
