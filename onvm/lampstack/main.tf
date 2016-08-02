@@ -22,13 +22,26 @@ resource "openstack_compute_instance_v2" "wordpress" {
 
   provisioner "remote-exec" {
     inline = [
-      "mkdir -p ~/scripts"
+      "mkdir -p ~/scripts ~/app"
     ]
   }
 
   provisioner "file" {
-    source = "scripts/lampsetup.sh"
-    destination = "~/scripts/lampsetup.sh"
+    source = "scripts/lampstack.sh"
+    destination = "~/scripts/lampstach.sh"
   }
+
+  provisioner "file" {
+    source = "app/limesurvey.zip"
+    destination = "~/app"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x ~/scripts/lampstack.sh",
+      "~/scripts/lampstack.sh"
+    ]
+  }
+
 
 }
