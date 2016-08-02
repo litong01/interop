@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
           managed.server = nodes[nodekey]['eth0']
         end
 
-        node.vm.provision "#{key}-install", type: "shell" do |s|
+        node.vm.provision "#{key}-install", type: "shell", privileged: false do |s|
           s.path = "onvm/scripts/install/" + key + ".sh"
         end
       end
