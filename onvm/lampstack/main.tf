@@ -4,8 +4,8 @@ resource "openstack_compute_keypair_v2" "lamp-key" {
   public_key = "${file("~/.ssh/id_rsa.pub")}"
 }
 
-resource "openstack_compute_instance_v2" "wordpress" {
-  name = "wordpress"
+resource "openstack_compute_instance_v2" "limesurvey" {
+  name = "limesurvey"
   image_name = "${var.image}"
   flavor_name = "${var.flavor}"
   key_pair = "lamp-key"
@@ -22,18 +22,19 @@ resource "openstack_compute_instance_v2" "wordpress" {
 
   provisioner "remote-exec" {
     inline = [
+      "echo \"127.0.0.1    `hostname`\" | sudo tee -a /etc/hosts >/dev/null",
       "mkdir -p ~/scripts ~/app"
     ]
   }
 
   provisioner "file" {
     source = "scripts/lampstack.sh"
-    destination = "~/scripts/lampstach.sh"
+    destination = "~/scripts/lampstack.sh"
   }
 
   provisioner "file" {
     source = "app/limesurvey.zip"
-    destination = "~/app"
+    destination = "~/app/limesurvey.zip"
   }
 
   provisioner "remote-exec" {
