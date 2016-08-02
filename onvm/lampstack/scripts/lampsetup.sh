@@ -33,7 +33,7 @@ wp db create
 wp core install --url="http://localhost/" \
                 --title="Decision2016" --admin_user="admin" \
                 --admin_password="pass" \
-                --admin_email="user@example.org"
+                --admin_email="user@example.org" --skip-email
 
 echo 'Moving wordpress to the right place.'
 sudo rm /var/www/html/index.html
@@ -46,7 +46,6 @@ echo '</IfModule>' >> dir.conf
 
 sudo cp dir.conf /etc/apache2/mods-available/dir.conf
 sudo chown root:root /etc/apache2/mods-available/dir.conf
-sudo chmod +x /etc/apache2/mods-available/dir.conf
 
 rm dir.conf
 sudo service apache2 restart
