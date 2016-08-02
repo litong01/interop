@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source /onvm/scripts/ini-config
+source /onvm/ini-config
 eval $(parse_yaml '/onvm/conf/nodes.conf.yml' 'interop_')
 
 # Install mongodb
