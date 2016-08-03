@@ -14,7 +14,7 @@ echo 'ServerName localhost' | sudo tee -a /etc/apache2/apache2.conf >/dev/null
 
 echo "create database limesurvey" | mysql -uroot -ppass
 
-sudo unzip -qq ~/app/limesurvey.zip -d /var/www/html
+sudo unzip -qq ~/onvm/lampstack/app/limesurvey.zip -d /var/www/html
 sudo chown -R www-data:www-data /var/www/html/limesurvey
 sudo cp /var/www/html/limesurvey/application/config/config-sample-mysql.php \
   /var/www/html/limesurvey/application/config/config.php

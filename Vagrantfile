@@ -12,7 +12,8 @@ Vagrant.configure("2") do |config|
   config.ssh.password = ids['password']
 
   config.vm.synced_folder ".", "/vagrant", disabled: true
-  config.vm.synced_folder "onvm", "/onvm", disabled: false, create: true
+  config.vm.synced_folder "onvm", "/home/"+ids['username'] + "/onvm",
+    disabled: false, create: true
 
   lnodes = nodes['ctlnodes']
   if lnodes
